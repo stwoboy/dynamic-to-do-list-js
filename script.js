@@ -13,25 +13,27 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        // Create list item
+        // Create a new list item for the task
         const li = document.createElement("li");
         li.textContent = taskText;
 
-        // Create remove button
+        // Create a remove button for the task
         const removeBtn = document.createElement("button");
         removeBtn.textContent = "Remove";
         removeBtn.className = "remove-btn";
 
-        // Remove task on button click
+        // When remove button is clicked, remove this task from the list
         removeBtn.onclick = function () {
             taskList.removeChild(li);
         };
 
-        // Append remove button to list item, then list item to the list
+        // Append remove button to the list item
         li.appendChild(removeBtn);
+
+        // Append the list item to the task list
         taskList.appendChild(li);
 
-        // Clear input field
+        // Clear the input field after adding the task
         taskInput.value = "";
     }
 
